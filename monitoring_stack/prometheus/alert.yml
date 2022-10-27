@@ -32,3 +32,11 @@ groups:
           severity: criticial
         annotations:
           summary: 'Alert with high severity.'
+
+      - alert: APIDown 
+        expr: up{job="api"} == 0
+        for: 1m
+        labels:
+        severity: critical
+        annotations:
+        summary: 'Alerta referente a queda da API.'
